@@ -1,0 +1,29 @@
+.image-request-list {
+    margin: 2rem auto;
+    max-width: 900px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+    padding: 1.5rem;
+}
+
+.image-request-list table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.image-request-list th,
+.image-request-list td {
+    padding: 0.75rem;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+}
+
+.image-request-list th {
+    background: #f7f7f7;
+    font-weight: 600;
+}
+
+.image-request-list tr:last-child td {
+    border-bottom: none;
+}
