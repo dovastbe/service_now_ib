@@ -29,7 +29,9 @@ export default function ImageRequestForm({ baseImages, onSubmit, onCancel, initi
         const { name, value } = e.target
         setFormData((prev) => ({
             ...prev,
-            [name]: value,
+            [name]: name === 'base_image' && typeof value === 'object'
+                ? value.value // unlikely, but defensive
+                : value,
         }))
     }
 
