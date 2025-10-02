@@ -4,7 +4,32 @@ import './ImageRequestForm.css'
 export default function ImageRequestForm({ baseImages, onSubmit, onCancel }) {
     const [formData, setFormData] = useState({
         requester: '',
-        base_image: '',
+                // ...existing code...
+        const [formData, setFormData] = useState({
+            requester: '',
+            base_image: '',
+            image_name: '',
+            additional_packages: [],
+            configuration_steps: '',
+        })
+        
+        // Add this if you ever use initialData or API data
+        useEffect(() => {
+            if (initialData) {
+                setFormData({
+                    requester: initialData.requester || '',
+                    base_image: typeof initialData.base_image === 'object'
+                        ? initialData.base_image.value
+                        : initialData.base_image || '',
+                    image_name: initialData.image_name || '',
+                    additional_packages: Array.isArray(initialData.additional_packages)
+                        ? initialData.additional_packages
+                        : (initialData.additional_packages || '').split(',').map(pkg => pkg.trim()).filter(Boolean),
+                    configuration_steps: initialData.configuration_steps || '',
+                })
+            }
+        }, [initialData])
+        // ...existing code...base_image: '',
         image_name: '',
         additional_packages: [],
         configuration_steps: '',
