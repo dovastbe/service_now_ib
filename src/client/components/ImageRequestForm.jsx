@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import './ImageRequestForm.css'
 
-export default function ImageRequestForm({ baseImages, onSubmit, onCancel }) {
+export default function ImageRequestForm({ baseImages, onSubmit, onCancel, initialData }) {
     const [formData, setFormData] = useState({
         requester: '',
         base_image: '',
